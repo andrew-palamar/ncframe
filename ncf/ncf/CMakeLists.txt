@@ -14,5 +14,5 @@ add_library(${NCF_LIBRARIES} SHARED
     )
 
 target_link_libraries(${NCF_LIBRARIES}
-    ncurses menu panel
+    ncursesw menuw panelw
     )

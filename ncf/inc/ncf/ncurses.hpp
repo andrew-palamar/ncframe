@@ -1,5 +1,6 @@
 #ifndef NCF_NCURSES_NCURSES_H
 #define NCF_NCURSES_NCURSES_H
+#include <locale.h>
 
 extern "C" {
 #include <curses.h>
@@ -39,7 +40,8 @@ inline void initialize()
 {
     static bool isInitialized = false;
     if (!isInitialized) {
-        ::initscr();
+        setlocale(LC_ALL, "");
+	    ::initscr();
         isInitialized = true;
         if (::has_colors()) {
             ::start_color();
